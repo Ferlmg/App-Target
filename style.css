@@ -74,6 +74,12 @@ body {
 .buttons a:hover{
     transform:translateY(-3px);
 }
+
+.hero-content {
+    max-width: 900px;
+    padding: 30px;
+    backdrop-filter: blur(2px);
+}
 .about,
 .products{
     padding:120px 40px;
