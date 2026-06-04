@@ -3,70 +3,236 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>DYT Software</title>
+
+<title>DyT-Software</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
-body{
+
+:root{
+    --bg:#0a0f0a;
+    --bg2:#111711;
+    --green:#2f9f5f;
+    --green-soft:#6fd48f;
+    --gold:#b8a06a;
+    --text:#f5f5f5;
+    --muted:#b8b8b8;
+}
+
+*{
     margin:0;
-    background:#0b1220;
-    color:white;
-    font-family:Arial, sans-serif;
-    display:flex;
-    justify-content:center;
-    align-items:center;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Inter',sans-serif;
+    background:linear-gradient(
+        135deg,
+        #050805 0%,
+        #0d140d 40%,
+        #111711 100%
+    );
+    color:var(--text);
     min-height:100vh;
-    text-align:center;
+}
+
+/* HERO */
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:80px;
+    position:relative;
+    overflow:hidden;
+}
+
+/* Luces de fondo */
+
+.hero::before{
+    content:"";
+    position:absolute;
+    width:700px;
+    height:700px;
+    background:radial-gradient(
+        circle,
+        rgba(47,159,95,0.18),
+        transparent 70%
+    );
+    top:-250px;
+    right:-150px;
+}
+
+.hero::after{
+    content:"";
+    position:absolute;
+    width:600px;
+    height:600px;
+    background:radial-gradient(
+        circle,
+        rgba(184,160,106,0.08),
+        transparent 70%
+    );
+    bottom:-250px;
+    left:-150px;
 }
 
 .container{
-    max-width:700px;
-    padding:40px;
-}
-
-img{
-    max-width:250px;
     width:100%;
+    max-width:1400px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:60px;
+    align-items:center;
 }
 
-h1{
-    margin-top:30px;
-    font-size:3rem;
+/* TEXTO */
+
+.hero-text{
+    z-index:2;
 }
 
-p{
-    font-size:1.2rem;
-    opacity:.8;
+.logo-text{
+    font-size:clamp(4rem,8vw,7rem);
+    font-weight:800;
+    line-height:1;
+    letter-spacing:-3px;
+    margin-bottom:25px;
 }
 
-.contact{
-    margin-top:30px;
-    font-size:1rem;
+.logo-text span{
+    color:var(--green-soft);
 }
+
+.subtitle{
+    color:var(--muted);
+    font-size:1.25rem;
+    line-height:1.8;
+    max-width:700px;
+    margin-bottom:50px;
+}
+
+/* CAJAS PARA CONTENIDO FUTURO */
+
+.content-box{
+    border:1px solid rgba(255,255,255,.08);
+    background:rgba(255,255,255,.03);
+    backdrop-filter:blur(10px);
+    border-radius:20px;
+    padding:30px;
+    margin-bottom:25px;
+}
+
+.content-box h3{
+    color:var(--green-soft);
+    margin-bottom:15px;
+}
+
+.placeholder{
+    color:#9aa09a;
+    line-height:1.8;
+}
+
+/* IMAGEN */
+
+.hero-image{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.hero-image img{
+    width:100%;
+    max-width:800px;
+    border-radius:25px;
+    box-shadow:
+    0 0 40px rgba(47,159,95,.15),
+    0 0 120px rgba(47,159,95,.08);
+}
+
+/* RESPONSIVE */
+
+@media(max-width:1000px){
+
+    .container{
+        grid-template-columns:1fr;
+    }
+
+    .hero{
+        padding:40px 25px;
+    }
+
+    .hero-image{
+        order:-1;
+    }
+
+    .logo-text{
+        text-align:center;
+    }
+
+    .subtitle{
+        text-align:center;
+        margin:auto auto 40px auto;
+    }
+}
+
 </style>
-
 </head>
+
 <body>
 
-<div class="container">
+<section class="hero">
 
-<img src="https://cdn-icons-png.flaticon.com/512/5956/5956592.png" alt="En construcción">
+    <div class="container">
 
-<h1>DYT Software</h1>
+        <div class="hero-text">
 
-<p>
-Escuelas infantiles.
-    Por el CEIP Eduardo López Palóp.
-</p>
+            <h1 class="logo-text">
+                DyT<span>-Software</span>
+            </h1>
 
-<p>
-La web estará disponible próximamente.
-</p>
+            <p class="subtitle">
+                Ingeniería de software premium.
+                Soluciones innovadoras, aplicaciones modernas y
+                desarrollo a medida para empresas que buscan
+                tecnología de alto nivel.
+            </p>
 
-<div class="contact">
-Contacto: dyt@dyt-software.com
-</div>
+            <div class="content-box">
+                <h3>Sobre la empresa</h3>
 
-</div>
+                <div class="placeholder">
+                    Añadir aquí la descripción corporativa,
+                    misión, visión, experiencia y valores de DyT-Software.
+                </div>
+            </div>
+
+            <div class="content-box">
+                <h3>Productos y Servicios</h3>
+
+                <div class="placeholder">
+                    Añadir aquí información sobre aplicaciones,
+                    desarrollo Swift, software empresarial,
+                    soluciones cloud, IA o cualquier otro producto.
+                </div>
+            </div>
+
+        </div>
+
+        <div class="hero-image">
+
+            <!-- Sustituir por tu imagen -->
+            <img src="hero-dyt-software.jpg"
+                 alt="DyT Software">
+
+        </div>
+
+    </div>
+
+</section>
 
 </body>
 </html>
