@@ -85,3 +85,9 @@ body {
     padding:120px 40px;
     background: #000;
 }
+@media (max-width: 768px) {
+    .hero {
+        min-height: 90vh;
+        background-position: center;
+    }
+}
