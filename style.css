@@ -74,3 +74,8 @@ body {
 .buttons a:hover{
     transform:translateY(-3px);
 }
+.about,
+.products{
+    padding:120px 40px;
+    background: #000;
+}
